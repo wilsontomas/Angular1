@@ -1,6 +1,8 @@
 export interface Datos {
-    abilities:[],
-    forms:[],
-    sprites:{},
-    types:[]
+    author:string,
+    content:string,
+    description:string,
+    title:string,
+    url:string,
+    urlToImage:string
 }

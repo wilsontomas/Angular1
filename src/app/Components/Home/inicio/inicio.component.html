@@ -1,1 +1,11 @@
 <p>inicio 1 works!</p>
+
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let item of this.DatosObtenidos.articles" class="col-md-4">
+                <app-carta [Datos]="item" ></app-carta>
+            </div>
+        </div>
+       
+    </div>
+

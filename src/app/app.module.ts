@@ -7,10 +7,12 @@ import { InicioComponent } from './Components/Home/inicio/inicio.component';
 import {ServicioService} from './Components/Home/servicio.service';
 
 import {HttpClientModule} from '@angular/common/http';
+import { CartaComponent } from './Components/carta/carta.component';
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    CartaComponent
   ],
   imports: [
     BrowserModule,
