@@ -11,5 +11,7 @@ export class CartaComponent implements OnInit {
   @Input() Datos:Datos={author:"", content:"", description:"", title:"", url:"", urlToImage:""};
   ngOnInit(): void {
   }
-
+  verNoticia(url:string){
+    window.open(url);
+  }
 }
