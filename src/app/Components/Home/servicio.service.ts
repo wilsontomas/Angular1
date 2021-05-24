@@ -12,7 +12,8 @@ export class ServicioService {
 
   url = '0cc3afdd941043c0b6f45da2d5376257';
   ObtenerInformacion():Observable<Noticias>{
-    return this.http.get<Noticias>("https://newsapi.org/v2/everything?q=tesla&from=2021-04-21&sortBy=publishedAt&apiKey="+this.url);
+    let fecha =Date.now();
+    return this.http.get<Noticias>("https://newsapi.org/v2/everything?q=tesla&from="+fecha+"&sortBy=publishedAt&apiKey="+this.url);
   }
  
 }
