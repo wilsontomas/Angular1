@@ -2,10 +2,15 @@
 
     <div class="container">
         <div class="row">
-            <div *ngFor="let item of this.DatosObtenidos.articles" class="col-md-4">
+            <div *ngFor="let item of this.DatosObtenidos.articles | paginate: { itemsPerPage: 10, currentPage: paginaActual }" class="col-md-4">
+                
                 <app-carta [Datos]="item" ></app-carta>
+                
             </div>
         </div>
+        <pagination-controls 
+        (pageChange)="paginaActual = $event"
+        ></pagination-controls>
        
     </div>
 

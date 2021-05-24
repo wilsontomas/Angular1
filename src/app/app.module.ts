@@ -8,6 +8,7 @@ import {ServicioService} from './Components/Home/servicio.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import { CartaComponent } from './Components/carta/carta.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { CartaComponent } from './Components/carta/carta.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
     
   ],
   providers: [ServicioService],

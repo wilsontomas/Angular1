@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../servicio.service';
 import {Noticias} from '../../../Interfaces/Noticias';
+
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -9,7 +11,7 @@ import {Noticias} from '../../../Interfaces/Noticias';
 export class InicioComponent implements OnInit {
 
   DatosObtenidos:Noticias={articles:[], status:"", totalResults:0};
-  
+  paginaActual:number=1;
   constructor(private Servicio:ServicioService) {
 
    
