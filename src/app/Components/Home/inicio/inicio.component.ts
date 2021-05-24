@@ -12,6 +12,7 @@ export class InicioComponent implements OnInit {
 
   DatosObtenidos:Noticias={articles:[], status:"", totalResults:0};
   paginaActual:number=1;
+ 
   constructor(private Servicio:ServicioService) {
 
    

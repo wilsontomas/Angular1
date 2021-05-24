@@ -9,17 +9,24 @@ import {ServicioService} from './Components/Home/servicio.service';
 import {HttpClientModule} from '@angular/common/http';
 import { CartaComponent } from './Components/carta/carta.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { SharedComponent } from './Components/shared/shared.component';
+import { FormsModule } from '@angular/forms';
+import { BusquedaComponent } from './Components/Home/busqueda/busqueda.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    CartaComponent
+    CartaComponent,
+    SharedComponent,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
     
   ],
   providers: [ServicioService],
