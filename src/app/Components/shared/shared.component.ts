@@ -24,7 +24,7 @@ export class SharedComponent implements OnInit {
     
   }
   detectarCambiosEnCategoria(){
-    console.log(this.categoriaSeleccionada);
+    //console.log(this.categoriaSeleccionada);
     this.router.navigate(['Categoria',{nombre:this.categoriaSeleccionada}]);
   }
 }

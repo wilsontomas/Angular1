@@ -16,6 +16,7 @@ export class BusquedaComponent implements OnInit {
     Servicio.obtenerInformacionPorBusqueda(this.termino).subscribe(x=>{
       this.datosObtenidos = x;
     });
+    
    //se revisan los eventos para detectar que se cambio la url y se reinician los datos
     router.events.subscribe((evento)=>{
       if(evento instanceof NavigationEnd){
