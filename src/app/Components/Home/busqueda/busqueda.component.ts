@@ -22,8 +22,10 @@ export class BusquedaComponent implements OnInit {
         //console.log('cambio la url');
         this.reiniciarInformacion();
       }
-    })
+    });
    }
+
+   
    //se declara la variable que contendra los datos
    datosObtenidos:Noticias={articles:[], status:"", totalResults:0};
    termino:string="";

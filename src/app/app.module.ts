@@ -12,6 +12,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { SharedComponent } from './Components/shared/shared.component';
 import { FormsModule } from '@angular/forms';
 import { BusquedaComponent } from './Components/Home/busqueda/busqueda.component';
+import { CategoriaComponent } from './Components/Home/categoria/categoria.component';
+import { CartaCategoriaComponent } from './Components/carta-categoria/carta-categoria.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BusquedaComponent } from './Components/Home/busqueda/busqueda.component
     InicioComponent,
     CartaComponent,
     SharedComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    CategoriaComponent,
+    CartaCategoriaComponent
   ],
   imports: [
     BrowserModule,

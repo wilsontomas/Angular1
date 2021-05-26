@@ -10,20 +10,18 @@
           <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+       
        
       </ul>
-      
+      <div class="form-inline my-2 my-lg-0">
+        <select class="form-control" (change)="detectarCambiosEnCategoria()" [(ngModel)]="categoriaSeleccionada">
+         <!--<option disabled selected value> -- Elije una opcion-- </option> --> 
+          <option *ngFor="let categoria of this.categoriaArticulo" [value]="categoria">
+            {{categoria}}
+          </option>
+        </select>
+        <span class="text-light">Buscar por Categoria</span>
+      </div>
       <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" [(ngModel)]="parametroDeBuscqueda" placeholder="Buscar" aria-label="Buscar">
         <button class="btn btn-success my-2 my-sm-0" (click)="buscarNoticias()"  type="submit">Buscar</button>

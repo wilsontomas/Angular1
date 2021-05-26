@@ -1,0 +1,26 @@
+<app-shared></app-shared>
+
+<div class="container">
+    <div *ngIf="this.datosObtenidos.sources.length >0">
+        <div class="row">
+            <div *ngFor="let item of this.datosObtenidos.sources | paginate: { itemsPerPage: 10, currentPage: paginaActual }" class="col-md-4">
+                
+               
+                <app-carta-categoria [Datos]="item"></app-carta-categoria>
+            </div>
+        </div>
+    <pagination-controls 
+    (pageChange)="paginaActual = $event"
+    
+    ></pagination-controls>
+    </div>
+    <br>
+        <div *ngIf="this.datosObtenidos.sources.length ==0" class="alert alert-success" role="alert">
+            
+             No hay registros para mostrar.
+        </div>
+       
+
+    
+   
+</div>
