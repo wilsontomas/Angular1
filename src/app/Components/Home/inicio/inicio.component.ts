@@ -10,15 +10,16 @@ import {Noticias} from '../../../Interfaces/Noticias';
 })
 export class InicioComponent implements OnInit {
 
-  DatosObtenidos:Noticias={articles:[], status:"", totalResults:0};
+  datosObtenidos:Noticias={articles:[], status:"", totalResults:0};
   paginaActual:number=1;
  
   constructor(private Servicio:ServicioService) {
 
    
-   Servicio.ObtenerInformacion().subscribe(x=>{
-     this.DatosObtenidos=x;
-      console.log(this.DatosObtenidos);
+   Servicio.obtenerInformacion().subscribe(x=>{
+     this.datosObtenidos=x;
+      console.log(this.datosObtenidos);
+      
     });
    
    }

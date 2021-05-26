@@ -1,17 +1,27 @@
 <app-shared></app-shared>
 
     <div class="container">
-        <div class="row">
-            <div *ngFor="let item of this.DatosObtenidos.articles | paginate: { itemsPerPage: 10, currentPage: paginaActual }" class="col-md-4">
-                
-                <app-carta [Datos]="item" ></app-carta>
-                
+        <div *ngIf="this.datosObtenidos.articles.length >0">
+            <div class="row">
+                <div *ngFor="let item of this.datosObtenidos.articles | paginate: { itemsPerPage: 10, currentPage: paginaActual }" class="col-md-4">
+                    
+                    <app-carta [Datos]="item" ></app-carta>
+                    
+                </div>
             </div>
-        </div>
         <pagination-controls 
         (pageChange)="paginaActual = $event"
         
         ></pagination-controls>
+        </div>
+        <br>
+            <div *ngIf="this.datosObtenidos.articles.length ==0" class="alert alert-success" role="alert">
+                
+                 No hay registros para mostrar.
+            </div>
+           
+    
+        
        
     </div>
 

@@ -11,10 +11,16 @@ export class ServicioService {
 
   constructor(private http:HttpClient) { }
 
-  url = '0cc3afdd941043c0b6f45da2d5376257';
-  ObtenerInformacion():Observable<Noticias>{
-    let fecha =Date.now();
-    return this.http.get<Noticias>("https://newsapi.org/v2/everything?q=tesla&from="+fecha+"&sortBy=publishedAt&apiKey="+this.url);
+  llave = '0cc3afdd941043c0b6f45da2d5376257';
+  fecha = Date.now();
+  categoriaArticulo=['business','entertainment','general','health','science','sports','technology'];
+  obtenerInformacion():Observable<Noticias>{
+    
+    return this.http.get<Noticias>("https://newsapi.org/v2/everything?q=tesla&from="+this.fecha+"&sortBy=publishedAt&apiKey="+this.llave);
+  }
+  
+  obtenerInformacionPorBusqueda(termino:string):Observable<Noticias>{
+    return this.http.get<Noticias>("https://newsapi.org/v2/everything?q="+termino+"&from="+this.fecha+"&sortBy=publishedAt&apiKey="+this.llave);
   }
  
 }
