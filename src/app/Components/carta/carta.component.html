@@ -3,9 +3,10 @@
 <div class="card" style="width: 18rem;">
     <img class="card-img-top" [src]="verificarImagen(Datos.urlToImage)" alt="Card image cap">
     <div class="card-body">
+      <h5>{{fecha | date:'short'}}</h5>
       <h5 class="card-title">{{Datos.title}}</h5>
       <p class="card-text">{{Datos.description}}</p>
       <button (click)="verNoticia(Datos.url)"  class="btn btn-primary">Ver la noticia</button>
-      <p class="card-text">{{Datos.author}}</p>
+      <p class="card-text">Autor: {{Datos.author}}</p>
     </div>
   </div>

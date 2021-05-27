@@ -13,6 +13,7 @@ export class CartaComponent implements OnInit {
     
   }
   @Input() Datos:Datos={author:"", content:"", description:"", title:"", url:"", urlToImage:""};
+  fecha = Date.now();
   ngOnInit(): void {
     
   }
