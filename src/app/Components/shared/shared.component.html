@@ -14,6 +14,15 @@
        
       </ul>
       <div class="form-inline my-2 my-lg-0">
+        <select class="form-control" (change)="detectarCambiosEnPais()" [(ngModel)]="paisSeleccionado">
+         <!--<option disabled selected value> -- Elije una opcion-- </option> --> 
+          <option *ngFor="let pais of this.paises" [value]="pais">
+            {{pais}}
+          </option>
+        </select>
+        <span class="text-light">Buscar por Pais</span>
+      </div>
+      <div class="form-inline my-2 my-lg-0">
         <select class="form-control" (change)="detectarCambiosEnCategoria()" [(ngModel)]="categoriaSeleccionada">
          <!--<option disabled selected value> -- Elije una opcion-- </option> --> 
           <option *ngFor="let categoria of this.categoriaArticulo" [value]="categoria">

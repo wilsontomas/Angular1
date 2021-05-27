@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { BusquedaComponent } from './Components/Home/busqueda/busqueda.component';
 import { CategoriaComponent } from './Components/Home/categoria/categoria.component';
 import { CartaCategoriaComponent } from './Components/carta-categoria/carta-categoria.component';
+import { PaisComponent } from './Components/Home/pais/pais.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CartaCategoriaComponent } from './Components/carta-categoria/carta-cate
     SharedComponent,
     BusquedaComponent,
     CategoriaComponent,
-    CartaCategoriaComponent
+    CartaCategoriaComponent,
+    PaisComponent
   ],
   imports: [
     BrowserModule,

@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {InicioComponent} from './Components/Home/inicio/inicio.component'
 import {BusquedaComponent} from './Components/Home/busqueda/busqueda.component';
 import { CategoriaComponent } from './Components/Home/categoria/categoria.component';
+import { PaisComponent } from './Components/Home/pais/pais.component';
 const routes: Routes = [
   {path:'Inicio', component:InicioComponent},
   {path:'Busqueda', component:BusquedaComponent},
   {path:'Categoria', component:CategoriaComponent},
+  {path:'Pais', component:PaisComponent},
   { path: '',   redirectTo: '/Inicio', pathMatch: 'full' },
   {path:'**', component:InicioComponent}
 

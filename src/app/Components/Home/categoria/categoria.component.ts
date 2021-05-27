@@ -13,7 +13,7 @@ export class CategoriaComponent implements OnInit {
 
   datosObtenidos:Source={sources:[], status:""};
    paginaActual:number=1;
-  terminoDeCategoria:string="general";
+  terminoDeCategoria:string="general"; 
 
   constructor(private servicio:ServicioService,private rutaActiva:ActivatedRoute, private router:Router) {
     //se obtiene el termino por la url

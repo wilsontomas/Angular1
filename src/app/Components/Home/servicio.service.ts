@@ -30,6 +30,10 @@ export class ServicioService {
   obtenerInformacionPorCategoria(categoria:string):Observable<Source>{
     return this.http.get<Source>("https://newsapi.org/v2/sources?category="+categoria+"&apiKey="+this.llave);
   }
+
+  obtenerInformacionPorPais(pais:string):Observable<Source>{
+    return this.http.get<Source>("https://newsapi.org/v2/sources?country="+pais+"&apiKey="+this.llave);
+  }
  obtenerInformacionOrdenada(orden:string):Observable<Noticias>{
   return this.http.get<Noticias>("https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&sortBy="+orden+"&apiKey="+this.llave);
  }
