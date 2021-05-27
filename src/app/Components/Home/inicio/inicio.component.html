@@ -1,5 +1,16 @@
 <app-shared></app-shared>
 
+
+<div class="form-group row float-right">
+    <label for="ordenamiento" class="col-sm-4 col-md-4 col-form-label">Ordenar</label>
+    <div class="col-sm-10 col-md-10">
+    <select class="form-control" id="ordenamiento" (change)="filtrarInformacion()" [(ngModel)]="ordenActual">
+        <option *ngFor="let item of this.ordenamientos" [value]="item">{{item}} </option>
+    </select>
+    </div>
+    
+</div><br>
+  
     <div class="container">
         <div *ngIf="this.datosObtenidos.articles.length >0">
             <div class="row">

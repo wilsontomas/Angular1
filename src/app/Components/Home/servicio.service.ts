@@ -20,7 +20,7 @@ export class ServicioService {
 
   //Se buscan las noticias del dominio de techcrunch
    obtenerInformacion():Observable<Noticias>{  
-    return this.http.get<Noticias>("https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey="+this.llave);
+    return this.http.get<Noticias>("https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&sortBy=publishedAt&apiKey="+this.llave);
   }
   //se buscan las noticias por terminos de busqueda
   obtenerInformacionPorBusqueda(termino:string):Observable<Noticias>{
@@ -30,5 +30,10 @@ export class ServicioService {
   obtenerInformacionPorCategoria(categoria:string):Observable<Source>{
     return this.http.get<Source>("https://newsapi.org/v2/sources?category="+categoria+"&apiKey="+this.llave);
   }
- 
+ obtenerInformacionOrdenada(orden:string):Observable<Noticias>{
+  return this.http.get<Noticias>("https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&sortBy="+orden+"&apiKey="+this.llave);
+ }
+ obtenerInformacionOrdenadaEnBusqueda(orden:string,termino:string):Observable<Noticias>{
+  return this.http.get<Noticias>("https://newsapi.org/v2/everything?q="+termino+"&domains=techcrunch.com,thenextweb.com&sortBy="+orden+"&apiKey="+this.llave);
+ }
 }

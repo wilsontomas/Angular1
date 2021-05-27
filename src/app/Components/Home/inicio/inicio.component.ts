@@ -12,7 +12,8 @@ export class InicioComponent implements OnInit {
 
   datosObtenidos:Noticias={articles:[], status:"", totalResults:0};
   paginaActual:number=1;
- 
+  ordenamientos:string[] = ['publishedAt','relevancy', 'popularity'];
+  ordenActual:string ="publishedAt";
   constructor(private Servicio:ServicioService) {
 
    
@@ -23,7 +24,13 @@ export class InicioComponent implements OnInit {
     });
    
    }
-   
+   //cuando cambia el valor del select, se recarga la pagina con la informacion ordenada.
+   filtrarInformacion(){
+    //alert(this.ordenActual);
+    this.Servicio.obtenerInformacionOrdenada(this.ordenActual).subscribe(x=>{
+      this.datosObtenidos = x;
+    });
+   }
   ngOnInit(): void {
   }
 

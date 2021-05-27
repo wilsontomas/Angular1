@@ -31,6 +31,9 @@ export class BusquedaComponent implements OnInit {
    datosObtenidos:Noticias={articles:[], status:"", totalResults:0};
    termino:string="";
    paginaActual:number=1;
+   ordenamientos:string[] = ['publishedAt','relevancy', 'popularity'];
+  ordenActual:string ="publishedAt";
+  
    obtenerParametros(){
     this.rutaActiva.params.subscribe(x=>{ this.termino=x.articulo;console.log(this.termino);});
   }
@@ -40,6 +43,13 @@ export class BusquedaComponent implements OnInit {
       this.datosObtenidos = x;
     });
   }
+  filtrarInformacionConTermino(){
+    //alert(this.ordenActual);
+    this.Servicio.obtenerInformacionOrdenadaEnBusqueda(this.ordenActual,this.termino).subscribe(x=>{
+      this.datosObtenidos = x;
+    });
+   }
+
   
   ngOnInit(): void {
   }
