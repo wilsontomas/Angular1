@@ -18,7 +18,7 @@ export class PaisComponent implements OnInit {
     this.reiniciarInformacion();
     router.events.subscribe((evento)=>{
       if(evento instanceof NavigationEnd){
-        console.log('cambio la url de pais');
+        //console.log('cambio la url de pais');
         this.reiniciarInformacion();
       }
     });
