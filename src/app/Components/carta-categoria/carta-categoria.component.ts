@@ -12,7 +12,7 @@ export class CartaCategoriaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  fecha = Date.now();
   @Input() Datos:Categoria={description:"",url:"", name:"", id:"", category:"", country:"",language:""};
   verNoticia(url:string){
     window.open(url);
