@@ -35,11 +35,12 @@ export class CategoriaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+//se obtiene la categoria de la url
   obtenerCategoria(){
     this.rutaActiva.params.subscribe(x=>{ this.terminoDeCategoria=x.nombre;});
 
   }
+  //se llena la variable que contiene las noticias
   reiniciarInformacion(){
     this.servicio.obtenerInformacionPorCategoria(this.terminoDeCategoria).subscribe(x=>{
       this.datosObtenidos = x;

@@ -12,8 +12,11 @@ export class CartaCategoriaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+    //obtenemos la fecha actual del sistema
   fecha = Date.now();
+  //variable por la cual se envia informacion desde el componente padre al hijo
   @Input() Datos:Categoria={description:"",url:"", name:"", id:"", category:"", country:"",language:""};
+  //metodo que abre una pestana nueva con la noticia
   verNoticia(url:string){
     window.open(url);
   }
