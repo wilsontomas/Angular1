@@ -2,10 +2,10 @@
 <br>
 
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="assets/image/news.png" alt="Card image cap">
+    <img class="card-img-top" src="assets/image/news.png" (click)="verNoticia(Datos.url)" style="cursor:pointer" alt="Card image cap">
     <div class="card-body">
       <h5>{{fecha | date:'short'}}</h5>
-      <h5 class="card-title">{{Datos.name}}</h5>
+      <h5 class="card-title" (click)="verNoticia(Datos.url)" style="cursor:pointer">{{Datos.name}}</h5>
       <p class="card-text">{{Datos.description}}</p>
       <p>Autor: Desconocido</p>
       <button (click)="verNoticia(Datos.url)"  class="btn btn-primary">Ver la noticia</button>
