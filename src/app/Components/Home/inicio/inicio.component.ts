@@ -17,20 +17,22 @@ export class InicioComponent implements OnInit {
   ordenamientos:string[] = ['publishedAt','relevancy', 'popularity'];
   //orden actual de los datos
   ordenActual:string ="publishedAt";
+  //variable del icono de carga
+  cargaVisible:boolean =true;
   constructor(private Servicio:ServicioService) {
 
    //al cargar la pagina se llena la informacion de las noticias
    Servicio.obtenerInformacion().subscribe(x=>{
      this.datosObtenidos=x;
       console.log(this.datosObtenidos);
-      
+      this.cargaVisible = false;
     });
    
    }
    //cuando cambia el valor del select, se recarga la pagina con la informacion ordenada.
    filtrarInformacion(){
     //alert(this.ordenActual);
-    this.Servicio.obtenerInformacionOrdenada(this.ordenActual).subscribe(x=>{
+    this.Servicio.obtenerInformacionOrdenada(this.ordenActual).subscribe(x=>{  
       this.datosObtenidos = x;
     });
    }

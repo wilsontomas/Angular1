@@ -12,6 +12,9 @@
 </div><br>
   
     <div class="container">
+        <div *ngIf="this.cargaVisible==true" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         <div *ngIf="this.datosObtenidos.articles.length >0">
             <div class="row">
                 <div *ngFor="let item of this.datosObtenidos.articles | paginate: { itemsPerPage: 10, currentPage: paginaActual }" class="col-md-4">
@@ -26,7 +29,7 @@
         ></pagination-controls>
         </div>
         <br>
-            <div *ngIf="this.datosObtenidos.articles.length ==0" class="alert alert-success" role="alert">
+            <div *ngIf="this.datosObtenidos.articles.length ==0 and this.cargaVisible==false" class="alert alert-success" role="alert">
                 
                  No hay registros para mostrar.
             </div>
